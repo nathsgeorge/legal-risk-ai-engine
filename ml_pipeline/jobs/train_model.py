@@ -9,6 +9,7 @@ from ml_pipeline.training.model import build_model
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="artifacts/model")
+    parser.add_argument("--model-version", default="1")
     args = parser.parse_args()
 
     x = np.random.rand(1000, 8)
@@ -18,8 +19,9 @@ def main() -> None:
     model.fit(x, y, validation_split=0.2, epochs=4, batch_size=64, verbose=0)
 
     out = Path(args.output)
-    out.mkdir(parents=True, exist_ok=True)
-    model.export(str(out))
+    versioned_out = out / str(args.model_version)
+    versioned_out.mkdir(parents=True, exist_ok=True)
+    model.export(str(versioned_out))
 
 
 if __name__ == "__main__":

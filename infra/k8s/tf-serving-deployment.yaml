@@ -15,5 +15,16 @@ spec:
       containers:
         - name: tf-serving
           image: tensorflow/serving:2.16.1
+          args:
+            - --model_name=failure_model
+            - --model_base_path=/models/failure_model
           ports:
             - containerPort: 8501
+          volumeMounts:
+            - name: failure-model-artifacts
+              mountPath: /models/failure_model
+      volumes:
+        - name: failure-model-artifacts
+          hostPath:
+            path: /var/lib/legal-risk-ai-engine/artifacts/model
+            type: DirectoryOrCreate
