@@ -105,7 +105,7 @@ This repository delivers a scalable AI system that:
 - Frontend risk dashboard and case triage view
 - Deployable local and cloud infrastructure templates
 
-## Senior-level Code Snippet
+## Snippet
 
 ```python
 class LegalRiskPolicyEngine:
