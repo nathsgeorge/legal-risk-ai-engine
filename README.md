@@ -210,72 +210,72 @@ docker compose -f infra/docker/docker-compose.yml up --build
 ## Repository Structure
 
 ```text
-legal-risk-ai-engine
-├── .github
-│   └── workflows
+legal-risk-ai-engine/
+├── .github/
+│   └── workflows/
 │       └── ci.yml
-├── backend
-│   ├── app
-│   │   ├── api
-│   │   │   └── v1
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── v1/
 │   │   │       └── routes_risk.py
-│   │   ├── core
+│   │   ├── core/
 │   │   │   ├── config.py
 │   │   │   └── logging.py
-│   │   ├── models
+│   │   ├── models/
 │   │   │   └── risk_case.py
-│   │   ├── observability
+│   │   ├── observability/
 │   │   │   └── metrics.py
-│   │   ├── schemas
+│   │   ├── schemas/
 │   │   │   └── risk.py
-│   │   ├── services
+│   │   ├── services/
 │   │   │   ├── policy_engine.py
 │   │   │   └── prediction_client.py
 │   │   └── main.py
 │   ├── requirements.txt
-│   └── tests
+│   └── tests/
 │       └── test_policy_engine.py
-├── docs
+├── docs/
 │   └── architecture.md
-├── frontend
+├── frontend/
 │   ├── package.json
-│   ├── src
-│   │   ├── components
+│   ├── src/
+│   │   ├── components/
 │   │   │   └── RiskCard.tsx
-│   │   ├── hooks
+│   │   ├── hooks/
 │   │   │   └── useRiskData.ts
-│   │   ├── pages
+│   │   ├── pages/
 │   │   │   └── Dashboard.tsx
-│   │   ├── services
+│   │   ├── services/
 │   │   │   └── api.ts
-│   │   ├── styles
+│   │   ├── styles/
 │   │   │   └── app.css
 │   │   └── main.tsx
 │   └── tsconfig.json
-├── infra
-│   ├── docker
+├── infra/
+│   ├── docker/
 │   │   └── docker-compose.yml
-│   ├── k8s
+│   ├── k8s/
 │   │   ├── backend-deployment.yaml
 │   │   └── tf-serving-deployment.yaml
-│   ├── monitoring
+│   ├── monitoring/
 │   │   └── prometheus.yml
-│   └── terraform
+│   └── terraform/
 │       └── main.tf
-├── ml_pipeline
-│   ├── features
+├── ml_pipeline/
+│   ├── features/
 │   │   └── transformations.py
-│   ├── jobs
+│   ├── jobs/
 │   │   └── train_model.py
-│   ├── orchestration
+│   ├── orchestration/
 │   │   └── run_pipeline.py
-│   ├── pyspark
+│   ├── pyspark/
 │   │   └── spark_session.py
-│   ├── serving
+│   ├── serving/
 │   │   └── export_model.py
-│   └── training
+│   └── training/
 │       └── model.py
-├── scripts
+├── scripts/
 │   └── seed_demo_data.py
 ├── .gitignore
 └── README.md
