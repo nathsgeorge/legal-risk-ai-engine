@@ -23,8 +23,8 @@ spec:
           volumeMounts:
             - name: failure-model-artifacts
               mountPath: /models/failure_model
+              readOnly: true
       volumes:
         - name: failure-model-artifacts
-          hostPath:
-            path: /var/lib/legal-risk-ai-engine/artifacts/model
-            type: DirectoryOrCreate
+          persistentVolumeClaim:
+            claimName: failure-model-pvc
